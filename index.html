@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#about -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EliteVB | Grace Stewart Volleyball Coaching | Hopkinsville, KY</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./EliteVB _ Grace Stewart Volleyball Coaching _ Hopkinsville, KY_files/css2" rel="stylesheet" media="all" onload="this.media=&#39;all&#39;">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0d1b3e;
@@ -21,7 +21,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; overflow-y: auto; }
 
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -48,7 +48,7 @@
   .btn-navy { background: var(--navy); color: var(--white); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; padding: 0.9rem 2rem; border-radius: 6px; transition: all 0.2s; text-decoration: none; display: inline-block; }
   .btn-navy:hover { background: var(--navy-light); transform: translateY(-2px); }
 
-  .hero { min-height: 100vh; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 60%, #1a3a70 100%); display: flex; align-items: center; justify-content: center; padding: 110px 1.5rem 5rem; position: relative; overflow: hidden; }
+  .hero { min-height: 100vh; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 60%, #1a3a70 100%); display: flex; align-items: center; justify-content: center; padding: 110px 1.5rem 5rem; position: relative; overflow-x: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
   .hero-ring { position: absolute; right: -80px; bottom: -80px; width: 420px; height: 420px; border-radius: 50%; border: 3px solid rgba(201,168,76,0.12); opacity: 0.5; }
   .hero-ring::before { content: ''; position: absolute; inset: 35px; border-radius: 50%; border: 2px solid rgba(201,168,76,0.18); }
@@ -73,7 +73,7 @@
   .stat-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; font-weight: 500; color: #8fa3c4; }
   .stat-item .num { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); letter-spacing: 1px; }
 
-  section { scroll-margin-top: 70px; }
+  section, div[id] { scroll-margin-top: 70px; }
   .section-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
   .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 6vw, 3.5rem); color: var(--navy); line-height: 1.05; letter-spacing: 1px; margin-bottom: 1rem; }
@@ -85,6 +85,7 @@
   #about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .about-photo-frame { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 14px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .about-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .about-photo-frame::before { content: '🏐'; font-size: 9rem; opacity: 0.1; position: absolute; right: -1rem; bottom: -1rem; transform: rotate(-20deg); }
   .about-initials { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: rgba(201,168,76,0.2); letter-spacing: 4px; text-align: center; line-height: 1.2; position: relative; z-index: 1; }
   .photo-note { color: rgba(201,168,76,0.4); font-size: 0.72rem; letter-spacing: 2px; text-align: center; margin-top: 0.5rem; }
@@ -136,6 +137,27 @@
   .price-note { margin-top: 2rem; background: var(--gray-light); border-radius: 10px; padding: 1.2rem 1.5rem; font-size: 0.85rem; color: #5a6680; line-height: 1.8; }
   .price-note strong { color: var(--navy); }
   .price-note a { color: var(--gold); font-weight: 600; }
+  .payment-card {
+    margin-top: 1.5rem; background: linear-gradient(135deg, #f0f8ff 0%, #e8f3fc 100%);
+    border: 1.5px solid #cfe6f7; border-radius: 14px; padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+  }
+  .venmo-badge {
+    width: 56px; height: 56px; border-radius: 50%; background: #3D95CE;
+    color: var(--white); display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; font-weight: 700; flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(61,149,206,0.35);
+  }
+  .payment-card .pc-text { flex: 1; min-width: 200px; }
+  .payment-card .pc-label { font-size: 0.78rem; font-weight: 700; color: #2477ab; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .payment-card .pc-handle { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+  .payment-card .pc-note { font-size: 0.82rem; color: #5a6680; margin-top: 0.3rem; }
+  .venmo-btn {
+    background: #3D95CE; color: var(--white); border: none; border-radius: 8px;
+    padding: 0.8rem 1.5rem; font-weight: 700; font-size: 0.9rem; text-decoration: none;
+    display: inline-block; transition: all 0.2s; flex-shrink: 0;
+  }
+  .venmo-btn:hover { background: #2477ab; transform: translateY(-2px); }
 
   #booking { background: var(--navy); }
   .booking-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
@@ -158,6 +180,8 @@
   .form-submit { width: 100%; margin-top: 0.5rem; font-size: 1rem; padding: 1rem; }
   .success-msg { display: none; background: #e8f5e9; border: 1px solid #81c784; color: #2e7d32; padding: 1rem; border-radius: 8px; font-size: 0.9rem; margin-top: 1rem; text-align: center; }
   .success-msg.show { display: block; }
+  .cal-tab { flex: 1; background: var(--gray-light); color: var(--navy); border: 1.5px solid var(--gray-light); border-radius: 8px; padding: 0.7rem 0.5rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .cal-tab-active { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
   #questionnaire { background: #f4f6fb; }
   .q-form { background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: var(--shadow); max-width: 780px; margin: 2.5rem auto 0; }
@@ -219,19 +243,22 @@
     .stats-bar { gap: 1.2rem; }
   }
 </style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
 <nav>
   <div class="nav-logo">Elite<span>VB</span></div>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#about" style="color: var(--gold);">About</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#credentials" style="">Credentials</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#experience" style="">Experience</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#services" style="">Services &amp; Pricing</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking" style="">Book a Lesson</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#testimonials" style="">Reviews</a></li>
-    <li><a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#contact" class="nav-cta">Request a Lesson</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#services">Services & Pricing</a></li>
+    <li><a href="#booking">Book a Lesson</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Request a Lesson</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -239,15 +266,15 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#about" class="menu-link">About Grace</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#credentials" class="menu-link">Credentials</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#experience" class="menu-link">Coaching Experience</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#services" class="menu-link">Services &amp; Pricing</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking" class="menu-link">Book a Lesson</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#questionnaire" class="menu-link">Player Intake Form</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#testimonials" class="menu-link">Testimonials</a>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#contact" class="menu-link">Contact</a>
-  <a href="https://www.facebook.com/grace.waldron.stewart" target="_blank" class="menu-link">Facebook · Grace Waldron Stewart</a>
+  <a href="#about" class="menu-link">About Grace</a>
+  <a href="#credentials" class="menu-link">Credentials</a>
+  <a href="#experience" class="menu-link">Coaching Experience</a>
+  <a href="#services" class="menu-link">Services &amp; Pricing</a>
+  <a href="#booking" class="menu-link">Book a Lesson</a>
+  <a href="#questionnaire" class="menu-link">Player Intake Form</a>
+  <a href="#testimonials" class="menu-link">Testimonials</a>
+  <a href="#contact" class="menu-link">Contact</a>
+  <a href="https://www.facebook.com/grace.waldron.39" target="_blank" class="menu-link">Facebook · Grace Waldron Stewart</a>
 </div>
 
 <!-- HERO -->
@@ -259,8 +286,8 @@
     <div class="hero-name">Coach Grace Stewart</div>
     <p class="hero-sub">12+ years of volleyball experience. <strong>3 state championship titles. A winning record every single season.</strong> Now bringing elite coaching to players in Christian County — one athlete at a time.</p>
     <div class="hero-btns">
-      <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking" class="btn-primary">Request a Lesson →</a>
-      <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#about" class="btn-outline">Meet Coach Grace</a>
+      <a href="#booking" class="btn-primary">Request a Lesson →</a>
+      <a href="#about" class="btn-outline">Meet Coach Grace</a>
     </div>
     <div class="hero-location">📍 Heritage Christian Academy · <span>Hopkinsville, KY</span> · <span>(270) 348-2965</span></div>
   </div>
@@ -273,7 +300,7 @@
       <div class="signup-text-big">Ready to Sign Up?</div>
       <div class="signup-text-sub">Spots are limited — secure your player's session with Coach Grace today.</div>
     </div>
-    <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking" class="btn-navy">Sign Up for Lessons →</a>
+    <a href="#booking" class="btn-navy">Sign Up for Lessons →</a>
   </div>
 </div>
 
@@ -292,10 +319,7 @@
     <div class="about-grid">
       <div>
         <div class="about-photo-frame">
-          <div style="text-align:center;position:relative;z-index:1;">
-            <div class="about-initials">GS</div>
-            <div class="photo-note">PHOTO COMING SOON</div>
-          </div>
+          <img src="data:image/jpeg;base64,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" alt="Coach Grace Stewart coaching volleyball">
         </div>
         <div class="about-badge">
           <span class="big">12+</span>
@@ -306,7 +330,7 @@
         <div class="section-label">Meet the Coach</div>
         <h2 class="section-title">Grace Stewart</h2>
         <div class="divider"></div>
-        <p class="section-body">Grace Stewart is a former championship player and one of the most accomplished volleyball coaches in the Christian County area. A Murray State University graduate with over 12 years of experience spanning competitive play, head coaching, camp directing, and private instruction, Grace brings a deep understanding of what it takes to develop great players at every level.</p>
+        <p class="section-body">Grace Stewart is a former championship player and one of the most accomplished volleyball coaches in the Christian County area. With over 12 years of experience spanning competitive play, head coaching, camp directing, and private instruction, Grace brings a deep understanding of what it takes to develop great players at every level.</p>
         <div class="philosophy-box">
           <p>"My focus is on the whole athlete — strengthening skills and the mind for big moment performance. I believe in promoting positive attitude and leadership qualities. Your athlete will learn what coaches are looking for and how to stand out from every other player on the court."</p>
           <span class="attr">— Coach Grace Stewart · EliteVB · Hopkinsville, KY</span>
@@ -315,7 +339,6 @@
           <div class="highlight-pill">🏅 2-Time State Champion (Player)</div>
           <div class="highlight-pill">⭐ All-State Honors</div>
           <div class="highlight-pill">🏐 2013 KCAA Miss Volleyball</div>
-          <div class="highlight-pill">🎓 Murray State University</div>
           <div class="highlight-pill">🎽 Youth Camp Director</div>
           <div class="highlight-pill">👥 Community Program Builder</div>
           <div class="highlight-pill">📍 Hopkinsville, KY</div>
@@ -348,8 +371,6 @@
         <ul>
           <li>Planned and directed youth volleyball camps</li>
           <li>Helped restart girls youth volleyball at Sportsplex</li>
-          <li>Trained and recruited coaches and referees</li>
-          <li>Built community programs from the ground up</li>
         </ul>
       </div>
       <div class="cred-card">
@@ -358,7 +379,7 @@
         <ul>
           <li>Several years of 1-on-1 and group private lessons</li>
           <li>Works with players entering 6th grade and up</li>
-          <li>Players must have at least 1 year of experience</li>
+          <li>All experience levels welcome</li>
           <li>Serving Hopkinsville &amp; Christian County, KY</li>
         </ul>
       </div>
@@ -411,7 +432,7 @@
     <div class="section-label">Services &amp; Pricing</div>
     <h2 class="section-title">What Coach Grace Offers</h2>
     <div class="divider"></div>
-    <p class="section-body">All sessions held at <strong>Heritage Christian Academy, Hopkinsville, KY</strong>. Open to players entering 6th grade or above with at least 1 year of experience. Sessions available in <strong>1-hour or 90-minute</strong> formats.</p>
+    <p class="section-body">All sessions held at <strong>Heritage Christian Academy, Hopkinsville, KY</strong>. All experience levels welcome — players entering 6th grade or above.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🎯</div>
@@ -419,7 +440,11 @@
         <p>One-on-one sessions focused entirely on your player's technique, positioning, and individual goals. Maximum attention, maximum growth.</p>
         <div class="service-footer">
           <span class="service-tag">1-on-1 · All Positions</span>
-          <span class="service-price">$40<small>/hr</small></span>
+        </div>
+        <div style="margin-top:0.8rem;display:flex;flex-direction:column;gap:0.3rem;font-size:0.85rem;color:#5a6680;">
+          <div style="display:flex;justify-content:space-between;"><span>30 minutes</span><strong style="color:var(--navy);">$25</strong></div>
+          <div style="display:flex;justify-content:space-between;"><span>45 minutes</span><strong style="color:var(--navy);">$40</strong></div>
+          <div style="display:flex;justify-content:space-between;"><span>60 minutes</span><strong style="color:var(--navy);">$50</strong></div>
         </div>
       </div>
       <div class="service-card">
@@ -428,16 +453,9 @@
         <p>Train with 2–4 players in a high-energy collaborative setting. Great for teammates, friends, or players at a similar skill level.</p>
         <div class="service-footer">
           <span class="service-tag">2–4 Players</span>
-          <span class="service-price">$30<small>/hr per player</small></span>
         </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📈</div>
-        <h3>Skill Development Sessions</h3>
-        <p>Targeted training on specific skills — passing, serving, hitting mechanics, setting, blocking, footwork, or defensive technique.</p>
-        <div class="service-footer">
-          <span class="service-tag">Position-Specific</span>
-          <span class="service-price">$40<small>/hr per player</small></span>
+        <div style="margin-top:0.8rem;display:flex;flex-direction:column;gap:0.3rem;font-size:0.85rem;color:#5a6680;">
+          <div style="display:flex;justify-content:space-between;"><span>1 hour</span><strong style="color:var(--navy);">$40</strong></div>
         </div>
       </div>
       <div class="service-card">
@@ -464,12 +482,21 @@
         <p>A full 6-hour camp covering every aspect of the game — serving, passing, hitting, defense, and team play from start to finish.</p>
         <div class="service-footer">
           <span class="service-tag">6 Hours · Youth</span>
-          <span class="service-price">$450</span>
+          <span class="service-price">$500</span>
         </div>
       </div>
     </div>
     <div class="price-note">
-      <strong>📌 Session Length:</strong> All lessons available in 1-hour or 90-minute formats. &nbsp;|&nbsp; <strong>📍 Location:</strong> Heritage Christian Academy, Hopkinsville, KY — players come to Coach Grace. &nbsp;|&nbsp; <strong>🏕️ Camp Dates:</strong> TBD — follow on Facebook for updates. &nbsp;|&nbsp; <strong>Questions?</strong> Call or text <a href="tel:2703482965">(270) 348-2965</a> or email <a href="mailto:gracestewartvb@gmail.com">gracestewartvb@gmail.com</a>
+      <strong>📌 Session Length:</strong> Private lessons in 30, 45, or 60-minute options. Small group lessons are 1 hour. &nbsp;|&nbsp; <strong>📍 Location:</strong> Heritage Christian Academy, Hopkinsville, KY — players come to Coach Grace. &nbsp;|&nbsp; <strong>🏕️ Camp Dates:</strong> Contact Grace to schedule a camp date. &nbsp;|&nbsp; <strong>Questions?</strong> Call or text <a href="tel:2703482965">(270) 348-2965</a> or email <a href="mailto:gracestewartvb@gmail.com">gracestewartvb@gmail.com</a>
+    </div>
+    <div class="payment-card">
+      <div class="venmo-badge">V</div>
+      <div class="pc-text">
+        <div class="pc-label">Payment Accepted Via</div>
+        <div class="pc-handle">@grace_waldron15</div>
+        <div class="pc-note">Please include the player's name &amp; session date in the Venmo note. Cash or check also accepted at the session.</div>
+      </div>
+      <a href="https://venmo.com/u/grace_waldron15" target="_blank" class="venmo-btn">Pay with Venmo →</a>
     </div>
   </div>
 </section>
@@ -482,7 +509,7 @@
         <div class="section-label" style="color:var(--gold-light)">Get on the Schedule</div>
         <h2 class="section-title light">Book a Session<br>with Coach Grace</h2>
         <div class="divider"></div>
-        <p>Fill out the form and Grace will be in touch within 24–48 hours to confirm your session. No payment required to request — just submit your info and let's get to work.</p>
+        <p>Pick a session type and click an open time below — it's reserved instantly. No back-and-forth required. Coach Grace will see it on her calendar right away.</p>
         <div class="location-block">
           <div class="ico">📍</div>
           <div>
@@ -491,67 +518,27 @@
           </div>
         </div>
         <div class="avail-block">
-          <h4>Scheduling</h4>
-          <p class="avail-note">Scheduling is being set — submit your preferred days/times and Grace will work with you to find the best fit.</p>
-          <p class="avail-note" style="margin-top:0.5rem;">Session options: <strong style="color:#b0bcd4;">1 hour or 90 minutes</strong></p>
+          <h4>Current Availability</h4>
+          <p class="avail-note">Saturdays 9:00 AM &ndash; 12:00 PM</p>
+          <p class="avail-note" style="margin-top:0.5rem;">Private lessons: <strong style="color:#b0bcd4;">30 / 45 / 60 min</strong> &middot; Group lessons: <strong style="color:#b0bcd4;">1 hr</strong></p>
         </div>
       </div>
-      <div class="booking-form">
-        <h3>Lesson Request Form</h3>
-        <p style="font-size:0.8rem;color:var(--gray-mid);margin-bottom:1.2rem;">Fields marked * are required. Grace will contact you within 24–48 hours.</p>
-        <input type="hidden" id="b-formtype" value="Lesson Request">
-        <div class="form-row">
-          <div class="form-group"><label>Player Name *</label><input type="text" placeholder="First &amp; Last Name" id="b-player"></div>
-          <div class="form-group"><label>Parent / Guardian Name *</label><input type="text" placeholder="First &amp; Last Name" id="b-parent"></div>
+      <div class="booking-form" style="padding:1.8rem;">
+        <h3 style="margin-bottom:1rem;">Pick a Session &amp; Time</h3>
+        <div style="display:flex;gap:0.6rem;margin-bottom:1.2rem;">
+          <button type="button" id="tab-private" class="cal-tab cal-tab-active">🎯 Private Lesson</button>
+          <button type="button" id="tab-group" class="cal-tab">👥 Small Group</button>
         </div>
-        <div class="form-row">
-          <div class="form-group"><label>Player Age / Grade *</label><input type="text" placeholder="e.g. 13 / 7th Grade" id="b-age"></div>
-          <div class="form-group">
-            <label>Experience Level</label>
-            <select id="b-level">
-              <option value="">Select level...</option>
-              <option>1 year experience (minimum)</option>
-              <option>Recreational – 2-3 years</option>
-              <option>Club / Travel Player</option>
-              <option>School Team Player</option>
-              <option>Competitive / Advanced</option>
-            </select>
-          </div>
+        <div style="background:#fff8e6;border:1.5px solid #f0d999;border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1rem;font-size:0.84rem;color:#5a5030;line-height:1.6;">
+          <strong style="color:#8a6d1f;">📋 How to book:</strong><br>
+          <strong>1.</strong> Click the duration dropdown at the top (e.g. "1 hr") — the options (30 min / 45 min / 1 hr) will appear <em>below the calendar</em>, so scroll down to see and select one.<br>
+          <strong>2.</strong> Then click an available day on the calendar — days with open slots are bold/clickable.<br>
+          <strong>3.</strong> Pick a time and enter your info to confirm.
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Position (if known)</label>
-            <select id="b-position">
-              <option value="">Not sure / No preference</option>
-              <option>Setter</option>
-              <option>Outside Hitter</option>
-              <option>Middle Blocker</option>
-              <option>Opposite / Right Side</option>
-              <option>Libero / DS</option>
-              <option>Multiple Positions</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Session Type</label>
-            <select id="b-type">
-              <option value="">Select type...</option>
-              <option>Private Lesson (1-on-1) – $40/hr</option>
-              <option>Small Group (2–4 players) – $30/hr each</option>
-              <option>Skill Development – $40/hr per player</option>
-              <option>Team Training – Contact for Pricing</option>
-              <option>Half Day Camp (3 hrs) – $300</option>
-              <option>Full Day Camp (6 hrs) – $450</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group"><label>Goals / Skills to Improve</label><textarea id="b-goals" placeholder="What would you like to work on? (e.g. serve, passing, confidence, hitting...)"></textarea></div>
-        <div class="form-group"><label>Preferred Days &amp; Times</label><input type="text" id="b-times" placeholder="e.g. Saturdays morning, weekday evenings after 5pm"></div>
-        <div class="form-row">
-          <div class="form-group"><label>Phone Number *</label><input type="tel" id="b-phone" placeholder="(270) 000-0000"></div>
-          <div class="form-group"><label>Email Address</label><input type="email" id="b-email" placeholder="parent@email.com"></div>
-        </div>
-        <button class="btn-primary form-submit" id="bookingBtn">Submit Lesson Request →</button>
-        <div class="success-msg" id="booking-success">✅ Request received! Coach Grace will be in touch within 24–48 hours to confirm your session.</div>
+        <div id="calendly-embed" style="min-width:280px;height:780px;"></div>
+        <p style="font-size:0.78rem;color:var(--gray-mid);margin-top:1rem;text-align:center;">
+          Prefer to message instead? <a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;">Contact Coach Grace directly →</a>
+        </p>
       </div>
     </div>
   </div>
@@ -573,11 +560,16 @@
           <div class="form-group"><label>Player Name</label><input type="text" id="q-name" placeholder="Full name"></div>
           <div class="form-group"><label>Age / Grade</label><input type="text" id="q-age" placeholder="e.g. 14 / 9th grade"></div>
         </div>
+        <div class="form-row">
+          <div class="form-group"><label>Parent / Guardian Name</label><input type="text" id="q-parent" placeholder="First & Last Name"></div>
+          <div class="form-group"><label>Parent / Player Email *</label><input type="email" id="q-email" placeholder="parent@email.com — used to share lesson notes"></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="q-phone" placeholder="(270) 000-0000"></div>
         <div class="form-group">
           <label>How long have you been playing volleyball?</label>
           <select id="q-years"><option value="">Select...</option><option>1 year (minimum)</option><option>2–3 years</option><option>4–5 years</option><option>6+ years</option></select>
         </div>
-        <div class="form-group"><label>Current or past teams?</label><input type="text" id="q-teams" placeholder="School, club, or recreational teams you&#39;ve played on"></div>
+        <div class="form-group"><label>Current or past teams?</label><input type="text" id="q-teams" placeholder="School, club, or recreational teams you've played on"></div>
       </div>
       <div class="q-section">
         <div class="q-section-title">Goals &amp; Challenges</div>
@@ -621,27 +613,7 @@
       <div class="section-label">What Families Are Saying</div>
       <h2 class="section-title light">Testimonials</h2>
       <div class="divider"></div>
-      <p class="section-body light">Real words from parents and players in the Hopkinsville &amp; Christian County community.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"My daughter struggled with confidence on the court. After a few sessions with Coach Grace she was serving more aggressively and communicating with her teammates like never before. The way she coaches the mental side of the game is special."</p>
-        <div class="testimonial-author">Sarah M.</div>
-        <div class="testimonial-role">Parent · Hopkinsville, KY</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Coach Grace pushes you to get better but always makes you feel supported. She helped me understand what coaches are actually looking for — that mindset shift changed everything about how I play."</p>
-        <div class="testimonial-author">Kayla T.</div>
-        <div class="testimonial-role">High School Player · Outside Hitter</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"We signed our daughter up for a small group session and it was one of the best decisions we made. Competitive, encouraging, and so well run. She can't wait to go back every week."</p>
-        <div class="testimonial-author">Jennifer R.</div>
-        <div class="testimonial-role">Parent · Christian County</div>
-      </div>
+      <p class="section-body light">Trained with Coach Grace? Be the first to share your experience and help other families in Hopkinsville &amp; Christian County find great coaching.</p>
     </div>
     <div class="leave-review">
       <h3>Leave a Testimonial</h3>
@@ -670,7 +642,7 @@
         <div class="divider"></div>
         <p>Have a question? Not sure which session is right? Reach out directly — Grace typically responds within 24 hours. Call, text, or message on Facebook.</p>
         <div class="contact-cards">
-          <a href="https://m.me/grace.waldron.stewart" class="contact-card" target="_blank">
+          <a href="https://m.me/grace.waldron.39" class="contact-card" target="_blank">
             <div class="cc-icon">💬</div>
             <div><div class="cc-label">Facebook Messenger</div><div class="cc-val">Grace Waldron Stewart</div></div>
           </a>
@@ -687,10 +659,55 @@
       <div class="contact-cta">
         <h3>Ready to Elevate Your Game?</h3>
         <p>Spots fill up fast. Don't wait — reach out today and get your player on the path to becoming the athlete coaches notice.</p>
-        <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking" class="btn-primary">Request a Lesson →</a>
+        <a href="#booking" class="btn-primary">Request a Lesson →</a>
         <div class="cta-details">📍 Heritage Christian Academy · Hopkinsville, KY<br>📞 (270) 348-2965</div>
       </div>
     </div>
+
+    <!-- MAP SECTION -->
+    <div style="margin-top:4rem;">
+      <div class="section-label">Training Location</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);letter-spacing:1px;margin-bottom:0.5rem;">Heritage Christian Academy</h3>
+      <p style="color:#5a6680;font-size:0.9rem;margin-bottom:1.5rem;">8105 Bloomfield Rd, Hopkinsville, KY 42240 · All sessions held here — players come to Coach Grace.</p>
+      <div style="border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:3px solid var(--gold);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-87.4891!3d36.8656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886878a9b8c8c8c9%3A0x1234567890abcdef!2sHeritage%20Christian%20Academy%2C%208105%20Bloomfield%20Rd%2C%20Hopkinsville%2C%20KY%2042240!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+          width="100%"
+          height="380"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Heritage Christian Academy - Hopkinsville KY">
+        </iframe>
+      </div>
+      <div style="margin-top:1.2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Heritage+Christian+Academy+8105+Bloomfield+Rd+Hopkinsville+KY+42240" target="_blank" class="btn-primary">
+          📍 Get Directions →
+        </a>
+        <a href="https://www.google.com/maps/search/Heritage+Christian+Academy+Hopkinsville+KY" target="_blank" class="btn-outline" style="color:var(--navy);border-color:var(--navy);">
+          View on Google Maps
+        </a>
+      </div>
+    </div>
+
+    <!-- QR CODE SHARE -->
+    <div style="margin-top:4rem;text-align:center;">
+      <div class="section-label" style="text-align:center;">Share This Page</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);letter-spacing:1px;margin-bottom:0.5rem;">Scan to Book</h3>
+      <p style="color:#5a6680;font-size:0.9rem;margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto;">Point a phone camera at this code to open EliteVB — perfect for flyers, team meetings, or sharing with other parents.</p>
+      <div style="display:inline-block;background:var(--white);padding:1.2rem;border-radius:14px;box-shadow:var(--shadow);border:3px solid var(--gold);">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Felitevb.netlify.app&color=0d1b3e&bgcolor=ffffff"
+             alt="QR code to elitevb.netlify.app" width="260" height="260" style="display:block;">
+      </div>
+      <p style="margin-top:1rem;font-size:0.85rem;color:var(--gray-mid);">elitevb.netlify.app</p>
+      <div style="margin-top:1.2rem;">
+        <a href="https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=https%3A%2F%2Felitevb.netlify.app&color=0d1b3e&bgcolor=ffffff" target="_blank" download="elitevb-qr-code.png" class="btn-outline" style="color:var(--navy);border-color:var(--navy);">
+          ⬇️ Download QR Code
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -698,81 +715,94 @@
 <footer>
   <strong>EliteVB · Coach Grace Stewart</strong><br>
   Heritage Christian Academy · Hopkinsville, Kentucky<br>
-  <a href="tel:2703482965">(270) 348-2965</a> &nbsp;·&nbsp; <a href="mailto:gracestewartvb@gmail.com">gracestewartvb@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/grace.waldron.stewart" target="_blank">Facebook</a><br><br>
-  <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#about">About</a> &nbsp;·&nbsp; <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#services">Services &amp; Pricing</a> &nbsp;·&nbsp; <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#booking">Book a Lesson</a> &nbsp;·&nbsp; <a href="file:///C:/Users/Garro/Downloads/volleyball_coaching_9.html#contact">Contact</a><br><br>
+  <a href="tel:2703482965">(270) 348-2965</a> &nbsp;·&nbsp; <a href="mailto:gracestewartvb@gmail.com">gracestewartvb@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/grace.waldron.39" target="_blank">Facebook</a><br><br>
+  <a href="#about">About</a> &nbsp;·&nbsp; <a href="#services">Services &amp; Pricing</a> &nbsp;·&nbsp; <a href="#booking">Book a Lesson</a> &nbsp;·&nbsp; <a href="#contact">Contact</a><br><br>
   © 2025 EliteVB · Grace Stewart Volleyball Coaching · Hopkinsville, KY
 </footer>
 
 <script>
-(function() {
-  // Run immediately when parsed, don't wait for DOMContentLoaded
-  function init() {
-    var hamburger = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobileMenu');
+window.onload = function() {
 
-    // Hamburger toggle
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function() {
-        mobileMenu.classList.toggle('open');
-      });
-    }
+  var SUPABASE_URL = 'https://mthkrfntjsyvehmscjeo.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im10aGtyZm50anN5dmVobXNjamVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4OTY1MzksImV4cCI6MjA5NzQ3MjUzOX0.dFHQ99PAVXxPsKVhEspiYWGX_e1i_U7k3qeCsNM7-8U';
+  var sbClient = null;
+  try {
+    sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } catch (e) { console.log('Supabase init skipped'); }
 
-    // Booking form
-    var bookingBtn = document.getElementById('bookingBtn');
-    if (bookingBtn) {
-      bookingBtn.addEventListener('click', function() {
-        var player = document.getElementById('b-player').value.trim();
-        var phone = document.getElementById('b-phone').value.trim();
-        if (!player || !phone) {
-          alert('Please fill in at least the player name and phone number.');
-          return;
-        }
-        bookingBtn.textContent = 'Sending...';
-        bookingBtn.disabled = true;
-        var data = {
-          'Form Type': 'Lesson Request',
-          'Player Name': player,
-          'Parent Name': document.getElementById('b-parent').value,
-          'Age / Grade': document.getElementById('b-age').value,
-          'Experience Level': document.getElementById('b-level').value,
-          'Position': document.getElementById('b-position').value,
-          'Session Type': document.getElementById('b-type').value,
-          'Goals': document.getElementById('b-goals').value,
-          'Preferred Times': document.getElementById('b-times').value,
-          'Phone': phone,
-          'Email': document.getElementById('b-email').value
-        };
-        fetch('https://formspree.io/f/xaqvpdrw', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(function(res) {
-          bookingBtn.textContent = 'Submit Lesson Request →';
-          bookingBtn.disabled = false;
-          if (res.ok) {
-            document.getElementById('booking-success').classList.add('show');
-            setTimeout(function() { document.getElementById('booking-success').classList.remove('show'); }, 7000);
-          } else {
-            alert('Problem submitting. Please call or text (270) 348-2965.');
+  // HAMBURGER MENU
+  var hb = document.getElementById('hamburger');
+  var mm = document.getElementById('mobileMenu');
+  if (hb) { hb.onclick = function() { mm.classList.toggle('open'); }; }
+
+  // NAV SMOOTH SCROLL
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    (function(link) {
+      var href = link.getAttribute('href');
+      if (href && href.indexOf('#') === 0 && href.length > 1) {
+        link.onclick = function(e) {
+          var id = href.substring(1);
+          var el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            var top = el.getBoundingClientRect().top + window.pageYOffset - 70;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            if (mm) mm.classList.remove('open');
           }
-        }).catch(function() {
-          bookingBtn.textContent = 'Submit Lesson Request →';
-          bookingBtn.disabled = false;
-          alert('Problem submitting. Please call or text (270) 348-2965.');
-        });
-      });
-    }
+        };
+      }
+    })(links[i]);
+  }
 
-    // Questionnaire form
-    var questionnaireBtn = document.getElementById('questionnaireBtn');
-    if (questionnaireBtn) {
-      questionnaireBtn.addEventListener('click', function() {
-        var confidence = document.querySelector('input[name="confidence"]:checked');
-        questionnaireBtn.textContent = 'Sending...';
-        questionnaireBtn.disabled = true;
-        var data = {
-          'Form Type': 'Player Intake / Questionnaire',
-          'Player Name': document.getElementById('q-name').value,
+  // CALENDLY BOOKING WIDGET
+  var calLinks = {
+    private: 'https://calendly.com/gracestewartvb/30min',
+    group: 'https://calendly.com/gracestewartvb/new-meeting'
+  };
+  var calEmbed = document.getElementById('calendly-embed');
+  var tabPrivate = document.getElementById('tab-private');
+  var tabGroup = document.getElementById('tab-group');
+
+  function loadCalendly(url) {
+    if (!calEmbed) return;
+    calEmbed.innerHTML = '<iframe src="' + url + '" style="width:100%;height:100%;border:0;display:block;" frameborder="0" title="Book a session"></iframe>';
+  }
+
+  if (tabPrivate && tabGroup) {
+    tabPrivate.onclick = function() {
+      tabPrivate.classList.add('cal-tab-active');
+      tabGroup.classList.remove('cal-tab-active');
+      loadCalendly(calLinks.private);
+    };
+    tabGroup.onclick = function() {
+      tabGroup.classList.add('cal-tab-active');
+      tabPrivate.classList.remove('cal-tab-active');
+      loadCalendly(calLinks.group);
+    };
+    loadCalendly(calLinks.private);
+  }
+
+  // QUESTIONNAIRE FORM
+  var qBtn = document.getElementById('questionnaireBtn');
+  if (qBtn) {
+    qBtn.onclick = function() {
+      var conf = document.querySelector('input[name="confidence"]:checked');
+      var pName = document.getElementById('q-name').value.trim();
+      var pEmail = document.getElementById('q-email').value.trim();
+      if (!pEmail) { alert('Please enter a parent/player email so Coach Grace can share lesson notes with you.'); qBtn.disabled = false; return; }
+      qBtn.textContent = 'Sending...'; qBtn.disabled = true;
+
+      // Send email notification via Formspree (unchanged)
+      fetch('https://formspree.io/f/xaqvpdrw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'Form Type': 'Player Intake',
+          'Player Name': pName,
+          'Parent Name': document.getElementById('q-parent').value,
+          'Email': pEmail,
+          'Phone': document.getElementById('q-phone').value,
           'Age / Grade': document.getElementById('q-age').value,
           'Years Playing': document.getElementById('q-years').value,
           'Past Teams': document.getElementById('q-teams').value,
@@ -780,83 +810,75 @@
           'Challenges': document.getElementById('q-challenges').value,
           'Skills to Improve': document.getElementById('q-skills').value,
           'Strengths': document.getElementById('q-strengths').value,
-          'Weaknesses / Areas to Grow': document.getElementById('q-weaknesses').value,
-          'Confidence Level': confidence ? confidence.value : 'Not selected',
-          'Preferred Coaching Style': document.getElementById('q-style').value,
-          'Additional Notes': document.getElementById('q-other').value
-        };
-        fetch('https://formspree.io/f/xaqvpdrw', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(function(res) {
-          questionnaireBtn.textContent = 'Submit Player Profile →';
-          questionnaireBtn.disabled = false;
-          document.getElementById('q-success').classList.add('show');
-          setTimeout(function() { document.getElementById('q-success').classList.remove('show'); }, 7000);
-        }).catch(function() {
-          questionnaireBtn.textContent = 'Submit Player Profile →';
-          questionnaireBtn.disabled = false;
-          document.getElementById('q-success').classList.add('show');
-          setTimeout(function() { document.getElementById('q-success').classList.remove('show'); }, 7000);
-        });
+          'Weaknesses': document.getElementById('q-weaknesses').value,
+          'Confidence Level': conf ? conf.value : 'Not selected',
+          'Coaching Style': document.getElementById('q-style').value,
+          'Notes': document.getElementById('q-other').value
+        })
+      }).then(function() {
+        qBtn.textContent = 'Submit Player Profile \u2192'; qBtn.disabled = false;
+        var m = document.getElementById('q-success');
+        m.classList.add('show'); setTimeout(function(){ m.classList.remove('show'); }, 7000);
+      }).catch(function() {
+        qBtn.textContent = 'Submit Player Profile \u2192'; qBtn.disabled = false;
+        var m = document.getElementById('q-success');
+        m.classList.add('show'); setTimeout(function(){ m.classList.remove('show'); }, 7000);
       });
-    }
 
-    // Testimonial form
-    var testimonialBtn = document.getElementById('testimonialBtn');
-    if (testimonialBtn) {
-      testimonialBtn.addEventListener('click', function() {
-        testimonialBtn.textContent = 'Sending...';
-        testimonialBtn.disabled = true;
-        var data = {
+      // Also create/update player profile in Supabase for the Coach Dashboard
+      if (sbClient && pName) {
+        sbClient.from('players').insert([{
+          player_name: pName,
+          parent_name: document.getElementById('q-parent').value,
+          email: pEmail,
+          phone: document.getElementById('q-phone').value,
+          age_grade: document.getElementById('q-age').value,
+          experience_level: document.getElementById('q-years').value,
+          goals: document.getElementById('q-goals').value,
+          challenges: document.getElementById('q-challenges').value,
+          skills_to_improve: document.getElementById('q-skills').value,
+          strengths: document.getElementById('q-strengths').value,
+          weaknesses: document.getElementById('q-weaknesses').value,
+          confidence_level: conf ? conf.value : '',
+          coaching_style: document.getElementById('q-style').value,
+          notes: document.getElementById('q-other').value
+        }]).then(function(res) {
+          if (res.error) console.log('Profile save skipped:', res.error.message);
+        });
+      }
+    };
+  }
+
+  // TESTIMONIAL FORM
+  var tBtn = document.getElementById('testimonialBtn');
+  if (tBtn) {
+    tBtn.onclick = function() {
+      tBtn.textContent = 'Sending...'; tBtn.disabled = true;
+      fetch('https://formspree.io/f/xaqvpdrw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
           'Form Type': 'Testimonial',
           'Name': document.getElementById('t-name').value,
           'Role': document.getElementById('t-role').value,
-          'Challenges Before Coaching': document.getElementById('t-before').value,
+          'Challenges Before': document.getElementById('t-before').value,
           'What Improved': document.getElementById('t-after').value,
           'Appreciated Most': document.getElementById('t-appreciate').value,
           'Would Recommend': document.getElementById('t-recommend').value
-        };
-        fetch('https://formspree.io/f/xaqvpdrw', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(function(res) {
-          testimonialBtn.textContent = 'Submit Testimonial →';
-          testimonialBtn.disabled = false;
-          document.getElementById('t-success').classList.add('show');
-          setTimeout(function() { document.getElementById('t-success').classList.remove('show'); }, 7000);
-        }).catch(function() {
-          testimonialBtn.textContent = 'Submit Testimonial →';
-          testimonialBtn.disabled = false;
-          document.getElementById('t-success').classList.add('show');
-          setTimeout(function() { document.getElementById('t-success').classList.remove('show'); }, 7000);
-        });
+        })
+      }).then(function() {
+        tBtn.textContent = 'Submit Testimonial \u2192'; tBtn.disabled = false;
+        var m = document.getElementById('t-success');
+        m.classList.add('show'); setTimeout(function(){ m.classList.remove('show'); }, 7000);
+      }).catch(function() {
+        tBtn.textContent = 'Submit Testimonial \u2192'; tBtn.disabled = false;
+        var m = document.getElementById('t-success');
+        m.classList.add('show'); setTimeout(function(){ m.classList.remove('show'); }, 7000);
       });
-    }
-
-    // Active nav highlight on scroll
-    var sections = document.querySelectorAll('section[id]');
-    var navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', function() {
-      var current = '';
-      sections.forEach(function(s) {
-        if (window.scrollY >= s.offsetTop - 80) current = s.id;
-      });
-      navLinks.forEach(function(a) {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-      });
-    });
+    };
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+};
 </script>
-
-
-</body></html>
+</body>
+</html>
