@@ -531,9 +531,13 @@
         </div>
         <div style="background:#fff8e6;border:1.5px solid #f0d999;border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1rem;font-size:0.84rem;color:#5a5030;line-height:1.6;">
           <strong style="color:#8a6d1f;">📋 How to book:</strong><br>
-          <strong>1.</strong> Click the duration dropdown at the top (e.g. "1 hr") — the options (30 min / 45 min / 1 hr) will appear <em>below the calendar</em>, so scroll down to see and select one.<br>
+          <strong>1.</strong> Click the duration dropdown at the top (e.g. "1 hr") — the options will appear <em>below the calendar</em>, so scroll down to see and select one.<br>
           <strong>2.</strong> Then click an available day on the calendar — days with open slots are bold/clickable.<br>
           <strong>3.</strong> Pick a time and enter your info to confirm.
+        </div>
+        <div id="group-note" style="display:none;background:#eaf3fb;border:1.5px solid #bcd9ef;border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1rem;font-size:0.84rem;color:#2c4b66;line-height:1.6;">
+          <strong style="color:#1a5fb4;">👥 Booking a small group?</strong><br>
+          One person books the time slot for the whole group (2–4 players). Please <strong>list the names of everyone attending</strong> in the notes when you book. $40/hr per player.
         </div>
         <div id="calendly-embed" style="min-width:280px;height:780px;"></div>
         <p style="font-size:0.78rem;color:var(--gray-mid);margin-top:1rem;text-align:center;">
@@ -758,7 +762,7 @@ window.onload = function() {
   // CALENDLY BOOKING WIDGET
   var calLinks = {
     private: 'https://calendly.com/gracestewartvb/30min',
-    group: 'https://calendly.com/gracestewartvb/new-meeting'
+    group: 'https://calendly.com/gracestewartvb/small-group-lesson'
   };
   var calEmbed = document.getElementById('calendly-embed');
   var tabPrivate = document.getElementById('tab-private');
@@ -770,14 +774,17 @@ window.onload = function() {
   }
 
   if (tabPrivate && tabGroup) {
+    var groupNote = document.getElementById('group-note');
     tabPrivate.onclick = function() {
       tabPrivate.classList.add('cal-tab-active');
       tabGroup.classList.remove('cal-tab-active');
+      if (groupNote) groupNote.style.display = 'none';
       loadCalendly(calLinks.private);
     };
     tabGroup.onclick = function() {
       tabGroup.classList.add('cal-tab-active');
       tabPrivate.classList.remove('cal-tab-active');
+      if (groupNote) groupNote.style.display = 'block';
       loadCalendly(calLinks.group);
     };
     loadCalendly(calLinks.private);
