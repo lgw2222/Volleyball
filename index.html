@@ -524,24 +524,39 @@
         </div>
       </div>
       <div class="booking-form" style="padding:1.8rem;">
-        <h3 style="margin-bottom:1rem;">Pick a Session &amp; Time</h3>
-        <div style="display:flex;gap:0.6rem;margin-bottom:1.2rem;">
-          <button type="button" id="tab-private" class="cal-tab cal-tab-active">🎯 Private Lesson</button>
-          <button type="button" id="tab-group" class="cal-tab">👥 Small Group</button>
+        <h3 style="margin-bottom:1rem;">Book Your Session</h3>
+
+        <div style="background:#eaf3fb;border:1.5px solid #bcd9ef;border-radius:10px;padding:1.1rem 1.2rem;margin-bottom:1rem;font-size:0.86rem;color:#2c4b66;line-height:1.7;">
+          <strong style="color:#1a5fb4;font-size:0.95rem;">Which session is right for you?</strong>
+          <div style="margin-top:0.7rem;padding-top:0.7rem;border-top:1px solid #cfe2f3;">
+            <strong>🎯 Private Lesson</strong> — Just your player, one-on-one with Coach Grace.<br>
+            <span style="color:#4a6a85;">30 min &mdash; $25 &nbsp;|&nbsp; 45 min &mdash; $40 &nbsp;|&nbsp; 1 hour &mdash; $50</span>
+          </div>
+          <div style="margin-top:0.7rem;padding-top:0.7rem;border-top:1px solid #cfe2f3;">
+            <strong>👥 Small Group</strong> — 2 to 4 players training together (teammates or friends).<br>
+            <span style="color:#4a6a85;">1 hour &mdash; $40 per player</span>
+          </div>
         </div>
-        <div style="background:#fff8e6;border:1.5px solid #f0d999;border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1rem;font-size:0.84rem;color:#5a5030;line-height:1.6;">
-          <strong style="color:#8a6d1f;">📋 How to book:</strong><br>
-          <strong>1.</strong> Click the duration dropdown at the top (e.g. "1 hr") — the options will appear <em>below the calendar</em>, so scroll down to see and select one.<br>
-          <strong>2.</strong> Then click an available day on the calendar — days with open slots are bold/clickable.<br>
-          <strong>3.</strong> Pick a time and enter your info to confirm.
+
+        <div style="background:#fff8e6;border:1.5px solid #f0d999;border-radius:10px;padding:1.1rem 1.2rem;margin-bottom:1rem;font-size:0.86rem;color:#5a5030;line-height:1.7;">
+          <strong style="color:#8a6d1f;font-size:0.95rem;">📋 How to book</strong>
+          <div style="margin-top:0.6rem;">
+            <strong>1.</strong> Click the duration dropdown at the top of the calendar (e.g. "1 hr"). The options appear <em>below the calendar</em> — scroll down to pick one.<br>
+            <strong>2.</strong> Choose an available day (bold/clickable days have open slots), then pick a time.<br>
+            <strong>3.</strong> <strong style="color:#8a6d1f;">In the notes box, tell Coach Grace which type of session you want:</strong>
+          </div>
+          <div style="margin-top:0.7rem;background:#fffdf5;border:1px dashed #d9c184;border-radius:8px;padding:0.8rem 1rem;font-size:0.83rem;">
+            <strong>For a private lesson, write:</strong><br>
+            <em>"Private lesson — [player's name]"</em><br><br>
+            <strong>For a small group, write:</strong><br>
+            <em>"Small group — [list every player attending]"</em><br>
+            <span style="color:#7a6a45;">One person books the slot for the whole group. Please list everyone's names.</span>
+          </div>
         </div>
-        <div id="group-note" style="display:none;background:#eaf3fb;border:1.5px solid #bcd9ef;border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1rem;font-size:0.84rem;color:#2c4b66;line-height:1.6;">
-          <strong style="color:#1a5fb4;">👥 Booking a small group?</strong><br>
-          One person books the time slot for the whole group (2–4 players). Please <strong>list the names of everyone attending</strong> in the notes when you book. $40/hr per player.
-        </div>
+
         <div id="calendly-embed" style="min-width:280px;height:780px;"></div>
         <p style="font-size:0.78rem;color:var(--gray-mid);margin-top:1rem;text-align:center;">
-          Prefer to message instead? <a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;">Contact Coach Grace directly →</a>
+          Not sure which to pick? <a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;">Contact Coach Grace directly →</a>
         </p>
       </div>
     </div>
@@ -760,34 +775,9 @@ window.onload = function() {
   }
 
   // CALENDLY BOOKING WIDGET
-  var calLinks = {
-    private: 'https://calendly.com/gracestewartvb/30min',
-    group: 'https://calendly.com/gracestewartvb/small-group-lesson'
-  };
   var calEmbed = document.getElementById('calendly-embed');
-  var tabPrivate = document.getElementById('tab-private');
-  var tabGroup = document.getElementById('tab-group');
-
-  function loadCalendly(url) {
-    if (!calEmbed) return;
-    calEmbed.innerHTML = '<iframe src="' + url + '" style="width:100%;height:100%;border:0;display:block;" frameborder="0" title="Book a session"></iframe>';
-  }
-
-  if (tabPrivate && tabGroup) {
-    var groupNote = document.getElementById('group-note');
-    tabPrivate.onclick = function() {
-      tabPrivate.classList.add('cal-tab-active');
-      tabGroup.classList.remove('cal-tab-active');
-      if (groupNote) groupNote.style.display = 'none';
-      loadCalendly(calLinks.private);
-    };
-    tabGroup.onclick = function() {
-      tabGroup.classList.add('cal-tab-active');
-      tabPrivate.classList.remove('cal-tab-active');
-      if (groupNote) groupNote.style.display = 'block';
-      loadCalendly(calLinks.group);
-    };
-    loadCalendly(calLinks.private);
+  if (calEmbed) {
+    calEmbed.innerHTML = '<iframe src="https://calendly.com/gracestewartvb/30min" style="width:100%;height:100%;border:0;display:block;" frameborder="0" title="Book a session"></iframe>';
   }
 
   // QUESTIONNAIRE FORM
