@@ -245,7 +245,8 @@
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -742,12 +743,15 @@
 <script>
 window.onload = function() {
 
-  var SUPABASE_URL = 'https://mthkrfntjsyvehmscjeo.supabase.co';
-  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im10aGtyZm50anN5dmVobXNjamVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4OTY1MzksImV4cCI6MjA5NzQ3MjUzOX0.dFHQ99PAVXxPsKVhEspiYWGX_e1i_U7k3qeCsNM7-8U';
-  var sbClient = null;
+  var firebaseConfig = {
+    databaseURL: "https://volleyball-coach-corner-default-rtdb.firebaseio.com",
+    projectId: "volleyball-coach-corner"
+  };
+  var fbDb = null;
   try {
-    sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  } catch (e) { console.log('Supabase init skipped'); }
+    firebase.initializeApp(firebaseConfig);
+    fbDb = firebase.database();
+  } catch (e) { console.log('Firebase init skipped'); }
 
   // HAMBURGER MENU
   var hb = document.getElementById('hamburger');
@@ -822,9 +826,9 @@ window.onload = function() {
         m.classList.add('show'); setTimeout(function(){ m.classList.remove('show'); }, 7000);
       });
 
-      // Also create/update player profile in Supabase for the Coach Dashboard
-      if (sbClient && pName) {
-        sbClient.from('players').insert([{
+      // Also create player profile in Firebase for the Coach Dashboard
+      if (fbDb && pName) {
+        fbDb.ref('players').push({
           player_name: pName,
           parent_name: document.getElementById('q-parent').value,
           email: pEmail,
@@ -838,9 +842,10 @@ window.onload = function() {
           weaknesses: document.getElementById('q-weaknesses').value,
           confidence_level: conf ? conf.value : '',
           coaching_style: document.getElementById('q-style').value,
-          notes: document.getElementById('q-other').value
-        }]).then(function(res) {
-          if (res.error) console.log('Profile save skipped:', res.error.message);
+          notes: document.getElementById('q-other').value,
+          created_at: new Date().toISOString()
+        }).catch(function(err) {
+          console.log('Profile save skipped:', err.message);
         });
       }
     };
